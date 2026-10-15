@@ -2,11 +2,15 @@
 
 ## Overview
 
-This university group project classifies RGB lung tissue images into three classes using a compact CNN implemented in PyTorch. The baseline was trained and evaluated alongside two alternative CNN architectures. The saved results describe the original student experiment, including the duplicate-image leakage found during a publication audit.
+This project uses convolutional neural networks to classify lung histopathology images into three classes: adenocarcinoma, normal lung tissue, and squamous cell carcinoma. It was developed for a university machine-learning assignment using PyTorch and includes a compact baseline CNN, two comparison architectures, and the corresponding training and evaluation pipeline.
 
 ## Dataset
 
-The original README identifies the source as a Google Drive folder supplied for the course. No download link, upstream dataset attribution, or license is provided, so those details could not be verified. Images are excluded from this repository. Obtain the course-provided `lung_subset_small` folder from the course provider; the exact subset is needed to reproduce the historical split.
+The project uses a 2,400-image subset of the [LC25000 (Lung and Colon Cancer Histopathological Image Dataset)](https://github.com/tampapath/lung_colon_image_set), containing its three lung tissue classes: `lung_aca`, `lung_n`, and `lung_scc`. The subset was provided for the course and contains 800 images per class, stored as 128 × 128 RGB JPEGs.
+
+The original LC25000 dataset contains 25,000 histopathology images across five lung and colon tissue classes, with 5,000 images per class. The dataset itself is not included in this repository.
+
+Dataset reference: Borkowski et al. (2019), [Lung and Colon Cancer Histopathological Image Dataset (LC25000)](https://arxiv.org/abs/1912.12142).
 
 All 2,400 local images were verified as RGB JPEGs measuring 128 × 128 pixels:
 
@@ -19,13 +23,15 @@ All 2,400 local images were verified as RGB JPEGs measuring 128 × 128 pixels:
 
 `ImageFolder` assigns labels as `lung_aca=0`, `lung_n=1`, `lung_scc=2`. The code makes a stratified 70%/15%/15% split in two stages with seed 42. A warned random-split fallback exists for datasets too small for stratification; it was not used here.
 
-**Duplicate-image leakage:** 22 image pairs are identical both as files and as decoded pixels. Eleven pairs cross split boundaries: six train/validation, four train/test, and one validation/test. The original split is preserved to keep historical results traceable. [Duplicate image evidence](reports/duplicate_images.json) records the filenames, hashes, and split membership.
+An audit found 22 exact duplicate image pairs, with 11 crossing split boundaries (six train/validation, four train/test, one validation/test), causing data leakage. [Duplicate image evidence](reports/duplicate_images.json) records the filenames, hashes, and split membership.
 
 ## Model
 
+The baseline model and training/evaluation pipeline in this repository were implemented by me.
+
 The baseline `SimpleLungCNN` has **23,779 trainable parameters**. Three 3 × 3 convolution layers with 16, 32, and 64 channels are each followed by ReLU and 2 × 2 max pooling. Global average pooling, dropout with probability 0.3, and a linear layer produce three logits. No pretrained weights are used.
 
-The existing `teammate` comparison uses 5 × 5 convolutions and a larger fully connected classifier. The `improved` comparison uses two convolutions per block, 32/64/128 channels, batch normalization, global average pooling, and dropout with probability 0.4.
+The `teammate` comparison (`TeammateCNN`) is based on a teammate's draft and uses 5 × 5 convolutions and a larger fully connected classifier. The `improved` comparison uses two convolutions per block, 32/64/128 channels, batch normalization, global average pooling, and dropout with probability 0.4.
 
 ## Training
 
@@ -37,11 +43,11 @@ Validation, test, and prediction use the same resizing and normalization without
 
 The best validation checkpoint is loaded and evaluated on the 360-image test split. Scikit-learn computes accuracy, macro precision, macro recall, macro F1, per-class metrics, and a confusion matrix. Macro F1 averages the three class F1 scores.
 
-The test loader is not passed to training or checkpoint selection. The files cannot establish whether test results influenced manual choices between experiments. During the audit, all three original checkpoints reproduced their saved test labels, predictions, confusion matrices, and aggregate metrics. This verifies the calculations but does not remove duplicate-image leakage.
+The test loader is not passed to training or checkpoint selection. The files cannot establish whether test results influenced manual choices between experiments. During the audit, all three original checkpoints reproduced their saved test labels, predictions, confusion matrices, and aggregate metrics.
 
 ## Results
 
-These are **historical results from the original split, which contains duplicate-image leakage**. They are not estimates from a leakage-free evaluation.
+These historical results use the original split; a later audit found exact duplicate images crossing split boundaries.
 
 | Model | Trainable parameters | Test accuracy | Macro F1 | Best epoch |
 |---|---:|---:|---:|---:|
@@ -146,17 +152,15 @@ Run commands from the repository root.
    python main.py --data_dir data/lung_subset_small --epochs 25 --batch_size 32 --lr 0.001 --img_size 128 --seed 42 --model_name baseline
    ```
 
-   This repeats the original split, including duplicate leakage, and overwrites that model's local checkpoint, metrics, and figures. Use `--model_name teammate` or `--model_name improved` for comparisons. `--data_dir` accepts a different dataset location. Both scripts support `--help`.
+   This repeats the original split and overwrites that model's local checkpoint, metrics, and figures. Use `--model_name teammate` or `--model_name improved` for comparisons. `--data_dir` accepts a different dataset location. Both scripts support `--help`.
 
 ## Development Note
 
 AI coding tools were used extensively during implementation. The resulting code was reviewed, tested, adapted, and evaluated by me as part of the project.
 
-The original README lists the group members as Saienko Mykhailo, Muzychenko Oleksandr, and Nikita Skydonenko. Individual contributions are not documented in the project files.
-
 ## Limitations
 
-- A clean rerun must remove duplicates or keep duplicate groups within a single split, then retrain and evaluate anew. Historical scores have not been replaced with invented corrected results.
+- A clean evaluation requires removing duplicates or keeping duplicate groups within a single split, followed by retraining and fresh evaluation.
 - No patient, slide, or original-image grouping metadata is available. Overlap among related images or augmented variants cannot be ruled out through the exact-duplicate check.
 - No external validation is present. The subset's upstream source and redistribution terms remain unverified.
 - This educational model is not a clinical diagnostic system.

@@ -1,0 +1,339 @@
+{
+  "cross_split_pairs": {
+    "test/train": 4,
+    "test/val": 1,
+    "train/val": 6
+  },
+  "duplicates": [
+    {
+      "sha256": "b745af71ba21e2ed8af713998123ab35a833a9bee3260f432dce0c5b2d0f6829",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca128.jpeg",
+          "split": "train",
+          "class": "lung_aca"
+        },
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca1330.jpeg",
+          "split": "test",
+          "class": "lung_aca"
+        }
+      ]
+    },
+    {
+      "sha256": "d0199eb31ec7eac2eda535839228c6ee6e5d33a5ddffa309eeba0622aa958a76",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca2123.jpeg",
+          "split": "train",
+          "class": "lung_aca"
+        },
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca4978.jpeg",
+          "split": "train",
+          "class": "lung_aca"
+        }
+      ]
+    },
+    {
+      "sha256": "85b65f302058928b6421a8681cf2eacb9f0b7325a02963d445465304f0f4ab7b",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca2373.jpeg",
+          "split": "train",
+          "class": "lung_aca"
+        },
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca2549.jpeg",
+          "split": "train",
+          "class": "lung_aca"
+        }
+      ]
+    },
+    {
+      "sha256": "7e2baf1ded2c960b5c08dda6769e327046765f426b061fe162eb32ff1724ad99",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca2704.jpeg",
+          "split": "train",
+          "class": "lung_aca"
+        },
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca3107.jpeg",
+          "split": "train",
+          "class": "lung_aca"
+        }
+      ]
+    },
+    {
+      "sha256": "74d64dc3c719047d7ecdd98ab021cee6deeda1f7231db68474cf0d61f3171445",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca2828.jpeg",
+          "split": "test",
+          "class": "lung_aca"
+        },
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca3908.jpeg",
+          "split": "train",
+          "class": "lung_aca"
+        }
+      ]
+    },
+    {
+      "sha256": "79739dfbe08892549971d4317b7f12c1b00dab0e692071525981734c8b8dfbb5",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca3890.jpeg",
+          "split": "test",
+          "class": "lung_aca"
+        },
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca43.jpeg",
+          "split": "val",
+          "class": "lung_aca"
+        }
+      ]
+    },
+    {
+      "sha256": "e05c89149647c5d3201ad869a9671a5754612bc76436fed1c70d8edb95bb5eb3",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca3931.jpeg",
+          "split": "test",
+          "class": "lung_aca"
+        },
+        {
+          "path": "data/lung_subset_small/lung_aca/lungaca4831.jpeg",
+          "split": "test",
+          "class": "lung_aca"
+        }
+      ]
+    },
+    {
+      "sha256": "75c9c4b1531300eb2b63b6b8dbf3b0ae4e2a37c85dc363102f748c8a11185848",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_n/lungn1225.jpeg",
+          "split": "val",
+          "class": "lung_n"
+        },
+        {
+          "path": "data/lung_subset_small/lung_n/lungn3349.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        }
+      ]
+    },
+    {
+      "sha256": "4d3abfb88442c7e0ada23acfdcc0009306b455d0962fca5adf6a99e926d6245e",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_n/lungn1794.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        },
+        {
+          "path": "data/lung_subset_small/lung_n/lungn3053.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        }
+      ]
+    },
+    {
+      "sha256": "4c0c6181cd1692a63f1780d7d0b3460e1b785e6a564f3be86cf3c5a7625e226d",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_n/lungn2125.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        },
+        {
+          "path": "data/lung_subset_small/lung_n/lungn4226.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        }
+      ]
+    },
+    {
+      "sha256": "3a88645aa93acd6e6a81234aea3f31451a9ab72674ee4349822f20a662c19a59",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_n/lungn272.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        },
+        {
+          "path": "data/lung_subset_small/lung_n/lungn40.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        }
+      ]
+    },
+    {
+      "sha256": "5afe01875abbda5308e8fb3fbbff9494d5960e516be8149ece5d17128f08ffbc",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_n/lungn2810.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        },
+        {
+          "path": "data/lung_subset_small/lung_n/lungn4662.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        }
+      ]
+    },
+    {
+      "sha256": "4ea3a43513973bc0ba84bb7e01da16819c9a6b5993ade7470ddc84bb50ec073f",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_n/lungn798.jpeg",
+          "split": "val",
+          "class": "lung_n"
+        },
+        {
+          "path": "data/lung_subset_small/lung_n/lungn990.jpeg",
+          "split": "train",
+          "class": "lung_n"
+        }
+      ]
+    },
+    {
+      "sha256": "e3a371237aa7a1d2b766e1f5ec25e3e7ae7028326ed591065385257f84ab1ef9",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc1050.jpeg",
+          "split": "val",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc4372.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        }
+      ]
+    },
+    {
+      "sha256": "d61e87f0b95df8465a6c6cd2d12bbbc4b51896c528b447b54e1a108c10be5d7e",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc1166.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc2049.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        }
+      ]
+    },
+    {
+      "sha256": "82cf2008f53249ccdf8ad70685577f77f2bcd53f56f385cb41e8ba7e1e83fa13",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc1862.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc4881.jpeg",
+          "split": "test",
+          "class": "lung_scc"
+        }
+      ]
+    },
+    {
+      "sha256": "fbcc1a3d253c6b691fab26eef46b2e89210f1b2d63875d9b374bc3f4c8884dd8",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc1999.jpeg",
+          "split": "val",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc989.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        }
+      ]
+    },
+    {
+      "sha256": "4a8710f02d4b5678ff27f5124c95a9f7d543f4771f30230b2e16175adaee6fc9",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc2042.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc608.jpeg",
+          "split": "val",
+          "class": "lung_scc"
+        }
+      ]
+    },
+    {
+      "sha256": "7992adf876090703e65b736ec09e47125912ef2f6b3e131b4520e0d32e7f56bd",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc2353.jpeg",
+          "split": "test",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc4430.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        }
+      ]
+    },
+    {
+      "sha256": "2bf7fd1d25925fc3dd5b14ac820218b7d77eda8af63f177f973446a4d688ed7f",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc2769.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc670.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        }
+      ]
+    },
+    {
+      "sha256": "fd29e710625439a30cf091a6ce423ae3fba6d1a5fd320967f89075161f74f692",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc3095.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc4519.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        }
+      ]
+    },
+    {
+      "sha256": "812fdc2c952983453e37d55ff2d04ba9f28519be0377b330b2ee2fcbaf6a9f77",
+      "members": [
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc3557.jpeg",
+          "split": "train",
+          "class": "lung_scc"
+        },
+        {
+          "path": "data/lung_subset_small/lung_scc/lungscc3910.jpeg",
+          "split": "val",
+          "class": "lung_scc"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+,full,train,val,test
+lung_aca,800,560,120,120
+lung_n,800,560,120,120
+lung_scc,800,560,120,120
+TOTAL,2400,1680,360,360
